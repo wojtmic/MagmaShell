@@ -2,6 +2,13 @@ import os
 import sys
 import json
 
+class command():
+    def __init__(self, syntax, description):
+        self.syntax = syntax
+        self.description = description
+
+safemode = False
+
 print("Magma Shell [Version 1.0.0/00001]")
 print("Copyright © 2023 Magma Shell | All rights reserved")
 
