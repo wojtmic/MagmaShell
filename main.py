@@ -22,6 +22,9 @@ path = os.getcwd()
 langfile = open(f"packages/langpacks/{langpack}/lang.json",'r', encoding="utf-8")
 langfile = json.load(langfile)
 
+#Load Packages
+print(os.walk("packages/cmdpacks"))
+
 while True:
     cmd = input(f"{path}>")
     if cmd == "exit":
