@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import subprocess
 
 class command():
     def __init__(self, syntax, description):
@@ -21,6 +22,12 @@ path = os.getcwd()
 
 langfile = open(f"packages/langpacks/{langpack}/lang.json",'r', encoding="utf-8")
 langfile = json.load(langfile)
+
+logs = open(f"log.magmashelllogs",'w', encoding="utf-8")
+cmd = "ipconfig"
+result = subprocess.run([cmd], shell=True, capture_output=True, text=True)
+logs.writelines(str(result.stdout))
+logs.close()
 
 #Load Packages
 print(os.walk("packages/cmdpacks"))
